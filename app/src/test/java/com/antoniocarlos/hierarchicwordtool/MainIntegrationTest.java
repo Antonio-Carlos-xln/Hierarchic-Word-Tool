@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 public class MainIntegrationTest{
   @Test
   public void checkTest(){
+    Main.write = true;
     Main.main(new String[]{"analyze","car car motorcycle motorcycle motorcycle","--depth","2","--verbose"});   
     Main.destinationPath = "output2.txt";
     Main.main(new String[]{"analyze","carro carro","--depth","2","--verbose"});
