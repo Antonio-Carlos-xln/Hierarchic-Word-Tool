@@ -1,0 +1,11 @@
+{"vehicle":{
+    "individual-vehicle":{
+        "car":null,
+        "motorcycle":null
+        },
+    "collective-vehicle":{
+              "train":null,
+              "bus":null
+        }        
+    }
+}
