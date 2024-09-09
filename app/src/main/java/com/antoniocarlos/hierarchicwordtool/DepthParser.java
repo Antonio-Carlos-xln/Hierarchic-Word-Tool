@@ -1,4 +1,4 @@
-package com.antoniocarlos.hierarchydata;
+package com.antoniocarlos.hierarchicwordtool;
 
 /**
  * Implementation of Parser and DataNode, meant to parse the depth option from the CLI options

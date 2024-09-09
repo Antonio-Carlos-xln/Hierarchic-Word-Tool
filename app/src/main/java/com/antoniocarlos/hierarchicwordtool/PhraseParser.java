@@ -1,4 +1,4 @@
-package com.antoniocarlos.hierarchydata;
+package com.antoniocarlos.hierarchicwordtool;
 
 /**
  * This class does the parsing of a phrase in the input, 

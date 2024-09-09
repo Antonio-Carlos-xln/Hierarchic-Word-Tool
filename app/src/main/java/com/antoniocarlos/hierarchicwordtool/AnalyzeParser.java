@@ -1,4 +1,4 @@
-package com.antoniocarlos.hierarchydata;
+package com.antoniocarlos.hierarchicwordtool;
 
 /**
  * This class is a concrete Implmentantion of the parser implementation meant to consume the "analyze" token

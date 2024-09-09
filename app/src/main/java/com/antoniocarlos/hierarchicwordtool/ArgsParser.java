@@ -1,4 +1,4 @@
-package com.antoniocarlos.hierarchydata;
+package com.antoniocarlos.hierarchicwordtool;
 
 import java.util.Map;
 import java.util.List;
