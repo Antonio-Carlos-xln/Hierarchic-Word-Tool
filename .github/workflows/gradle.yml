@@ -4,7 +4,7 @@ name: CI Workflow for Gradle Project
 
 on:
   workflow_dispatch:
-#  push:
+  push:
 jobs:
   build:
 
