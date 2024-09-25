@@ -16,14 +16,37 @@ import java.time.Duration;
  * the injection in this class and the reuest of parsing.
  */
 public class ArgsParser extends DataNode<String,Long>{
+  /**
+   * Holds the attributes and its values, after processing.
+   *  
+   */
   protected Map<String,Object> args;
+  /**
+   * Holds the raw input as individual tokens.
+   *  
+   */
   protected String[] input;
+  /**
+   * Holds the parser instances that should be used to parse the input.
+   *  
+   */
   protected List<Parser> parsers;
+  /**
+   * Holds the attributes and its values.
+   *  
+   */
   public ArgsParser(String[] args,List<Parser> parsers){
     this.input = args;
     this.parsers = parsers;
   }
 
+  
+  /**
+   * Returns the data produced by this dataNode, i.e. returns the total time taken for processing the input.
+   * The actual data is already available through the parsers. 
+   * 
+   * @return Long
+   */
   @Override
   public Long getData(){
     Instant start = Instant.now();
@@ -31,6 +54,10 @@ public class ArgsParser extends DataNode<String,Long>{
     return Duration.between(start,Instant.now()).toMillis();
   }
   
+  /**
+   * Does the parsing.
+   *  
+   */
   public void processArgs(){
     int a = 0;
     Parser currentParser = null;

@@ -30,13 +30,33 @@ import java.time.Duration;
  * input length, it can be said that it is O(1)
  */
 public class JSONCParserDataNode extends DataNode<String,Map>{
+  /** 
+   * the final map of all elements.
+   * 
+   */
   protected Map data;
+  /** 
+   * rhe raw content loaded from the specified file.
+   * 
+   */
   protected String content;
+  /** 
+   * the level being currently visited (used during parsing only).
+   * 
+   */
   protected int level = 0;
+ 
+  
   public JSONCParserDataNode(String content){
     this.content = content;
   }
   
+  
+  /** 
+   * Reads the data from the file and parses it to json.
+   * 
+   * @return JsonObject the global object with all the data.
+   */
   public JsonObject loadData(){
     JsonObject jsonObject = null;
     try(
@@ -49,6 +69,12 @@ public class JSONCParserDataNode extends DataNode<String,Map>{
     return jsonObject;
   }
   
+  
+  /** 
+   * Returns the data produced by this DataNode instance.
+   * 
+   * @return Map the data produced by this DataNode.
+   */
   @Override
   public Map getData(){
     data = new HashMap();
@@ -62,6 +88,12 @@ public class JSONCParserDataNode extends DataNode<String,Map>{
     return context();
   }
   
+  
+  /** 
+   * Traverses the passed json object and creates the required data structures for the application to work.
+   * 
+   * @param jsonObject an object to traverse
+   */
   public void traverseJsonObject(JsonObject jsonObject){
     for (Map.Entry<String, JsonValue> entry : jsonObject.entrySet()) {
       String key = entry.getKey();

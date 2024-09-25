@@ -11,7 +11,18 @@ import java.time.Duration;
  * as well as the timing in milliseconds of such operation 
  */
 public class CounterContextDataNode extends DataNode<String,Map<String,Object>>{
+  /**
+   * Holds the list of nodes that represent a token, a string to be counted.
+   *  
+   */
   protected List<TreeCounter.TreeNode> counts;
+  
+  /** 
+   * Produces and returns the data this DataNode is responsable for,
+   * requiring from other connected nodes the pieces of information required for performing said computation
+   * 
+   * @return Map<String, Object>
+   */
   @Override
   public Map<String,Object> getData(){
     long t0 = (long) this.ask("t0");
