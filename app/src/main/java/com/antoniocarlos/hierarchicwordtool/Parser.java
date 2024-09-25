@@ -18,14 +18,22 @@ public interface Parser<I,T>{
    * checks if current input meets the criteria to trigger input consuming
    * It should be noted tha the parser will readily consume the input tested
    * with this method if it mets the criteia, and if it's the case the parser will
-   * signal that hasalready consumed enough through the accept_single outcome
+   * signal that has already consumed enough through the accept_single outcome.
+   * 
+   * @param input current token of the stream.
+   * @param start offset from the start of the token.
+   * @return boolean whether or not the parser should keep consuming tokens from  the current stream.
    */
   Outcomes check(I input, int start);
 
   /**
    * Accepts input and return whether th parser intends to keep
    * processing input. While a parsing is consuming input, other parsers won't have
-   * the chance to check or consume inputt
+   * the chance to check or consume input.
+   * 
+   * @param input current token of the stream.
+   * @param start offset from the start of the token.
+   * @return boolean whether or not the parser should keep consuming tokens from  the current stream.
    */
   boolean consume(I input, int start);
   

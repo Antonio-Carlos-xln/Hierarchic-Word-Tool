@@ -10,8 +10,26 @@ import java.util.List;
  * the looping specifics to the client, allowing greater flexibility 
  */
 public interface Counter<I,T>{
+  /**
+   * It does extra preparations for start counting.
+   *  
+   */
   void begin();
+  /**
+   * It does the cleanup after the counting is done.
+   *  
+   */
   void stop();
+  /**
+   * Counts every token of the String, according to the implemented policy.
+   *  
+   */
   void count(I word);
+  /**
+   * Returns the data of the counting in a prespecified format defined by the type T.
+   *  
+   * @return a List of instances of some class that represents the process of counting.
+   * 
+   */
   List<T> report();
 }
